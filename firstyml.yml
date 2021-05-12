@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: myfristpod
+  labels: 
+    env1: prod
+    env2: prod2
+    env3: prod3
+
+spec:
+  containers:
+    - name: containername
+      image: coolgourav147/nginx-custom
+      env:
+              - name: myname
+                value: sourabh 
+              - name: city
+                value: kanore
+      args: ["sleep", "3600"]
+    - name: secondcontainer
+      image: coolgourav147/nginx-custom 
+  initContainers:
+      - name: containernamerrrrrrrrrrrrr
+        image: coolgourav147/nginx-custom
+        env:
+              - name: myname
+                value: sourabh
+              - name: city
+                value: kanore
+        args: ["sleep", "30"]
+
+
+      - name: 2ndinit 
+        image: coolgourav147/nginx-custom
+        env:
+              - name: myname
+                value: sourabh
+              - name: city
+                value: kanore
+        args: ["sleep", "30"]
+
